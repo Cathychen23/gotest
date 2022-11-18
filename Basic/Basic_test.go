@@ -1,6 +1,10 @@
 package main
 
-import "testing"
+import (
+	"fmt"
+	"math"
+	"testing"
+)
 
 func TestAdd(t *testing.T) {
 	n := Add(1, 2)
@@ -70,19 +74,38 @@ func TestFlowcontrol3(t *testing.T) {
 }
 
 func TestFlowcontrol5(t *testing.T) {
-	x := 2
-	z := sqrt(2)
-	if z == Flowcontrol5(x) {
+	var x float64 = 2
+	var y float64 = -4
+	var i, j string
+	v := math.Sqrt(x)
+	k := math.Sqrt(-y)
+	i = fmt.Sprint(v)
+	j = fmt.Sprint(k) + "i"
+
+	if sqrt(x) == i {
+		t.Log("test.Flowcontrol5 is success")
+	} else {
+		t.Error("test.Flowcontrol5 is fail")
+	}
+	if sqrt(y) == j {
 		t.Log("test.Flowcontrol5 is success")
 	} else {
 		t.Error("test.Flowcontrol5 is fail")
 	}
 }
 
+func test2(x, n, lim float64) float64 {
+	if v := math.Pow(x, n); v < lim {
+		return v
+	}
+	return lim
+}
 func TestFlowcontrol7(t *testing.T) {
-	test := pow(3, 3, 20)
-	if test == Flowcontrol7(3, 3, 20) {
-		t.Log("test.Flowcontrol7 is success")
+
+	if test2(3, 2, 10) == pow(3, 2, 10) {
+		if test2(3, 3, 20) == pow(3, 3, 20) {
+			t.Log("test.Flowcontrol7 is success")
+		}
 	} else {
 		t.Error("test.Flowcontrol7 is fail")
 	}

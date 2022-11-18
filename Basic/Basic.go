@@ -22,7 +22,6 @@ func Split(sum int) (x, y int) {
 func Basic13(x, y int) uint {
 	var f float64 = math.Sqrt(float64(x*x + y*y))
 	var z uint = uint(f)
-	fmt.Println(x, y, z)
 	return z
 }
 
@@ -34,14 +33,9 @@ const (
 	Small = Big >> 99
 )
 
+// Basic16
 func needInt(x int) int           { return x*10 + 1 }
 func needFloat(x float64) float64 { return x * 0.1 }
-
-func Basic16() {
-	fmt.Println(needInt(Small))
-	fmt.Println(needFloat(Small))
-	fmt.Println(needFloat(Big))
-}
 
 func Flowcontrol3(sum int) int {
 	for sum < 1000 {
@@ -51,6 +45,7 @@ func Flowcontrol3(sum int) int {
 	return sum
 }
 
+// Flowcontrol5
 func sqrt(x float64) string {
 	if x < 0 {
 		return sqrt(-x) + "i"
@@ -58,13 +53,7 @@ func sqrt(x float64) string {
 	return fmt.Sprint(math.Sqrt(x))
 }
 
-func Flowcontrol5(x int) string {
-	z := float64(x)
-	k := sqrt(z)
-	fmt.Println(sqrt(z))
-	return k
-}
-
+// Flowcontrol7
 func pow(x, n, lim float64) float64 {
 	if v := math.Pow(x, n); v < lim {
 		return v
@@ -73,13 +62,4 @@ func pow(x, n, lim float64) float64 {
 	}
 	// can't use v here, though
 	return lim
-}
-
-func Flowcontrol7(x, y, z int) float64 {
-	a := float64(x)
-	b := float64(y)
-	c := float64(z)
-	k := pow(a, b, c)
-	fmt.Println(k)
-	return float64(k)
 }
